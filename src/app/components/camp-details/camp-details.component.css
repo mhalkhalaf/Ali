@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px) {
+    th, td {
+        display: none; /* Hide all columns */
+    }
+    th:nth-child(1), td:nth-child(1) {
+        display: table-cell; /* Show only the first 3 columns */
+    }
+    th:nth-child(2), td:nth-child(2) {
+        display: table-cell;
+    }
+    th:nth-child(3), td:nth-child(3) {
+        display: table-cell;
+    }
+}

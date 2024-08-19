@@ -1,0 +1,71 @@
+<div class="card  flex md:flex-row gap-3">
+
+    <form class="col-xl-3  col-l-8" (ngSubmit)="Save()" [formGroup]="form">
+        <div>
+            <p-inputGroup class="py-3">
+                <p-inputGroupAddon>
+                    <i class="pi pi-user"></i>
+                </p-inputGroupAddon>
+                <input pInputText formControlName="username" placeholder="{{'Username' | translate}}" />
+            </p-inputGroup>
+            @if(form.get("username")?.errors?.["required"] && form.get("username")?.dirty){
+            <span class="text-danger">{{"Username" | translate}} {{"isRequired" | translate}}</span>
+            }
+            <p-inputGroup class="py-3">
+                <p-inputGroupAddon>
+                    <i class="pi pi-lock"></i>
+                </p-inputGroupAddon>
+                <input pInputText type="password" formControlName="password" name="password" placeholder="{{'Password' | translate}}" />
+            </p-inputGroup>
+            @if(form.get("password")?.errors?.["required"] && form.get("password")?.dirty){
+            <span class="text-danger d-block">{{'Password' | translate}} {{'isRequired' | translate}}</span>
+            }
+            @else if(form.get("password")?.errors?.["minlength"]){
+            <span class="text-danger d-block">{{"The length of the password must be more than 8 characters" | translate}}</span>
+            }
+            <p-dropdown class="py-3" [options]="statuses" formControlName="role" [editable]="true"
+                placeholder="Select a Role" />
+            @if(form.get("role")?.errors?.["required"] && form.get("role")?.dirty){
+            <span class="text-danger">{{"Username" | translate}} {{"isRequired" | translate}}</span>
+            }
+        </div>
+        <div class="col-xl-3 align-self-center">
+            <p-button class="mt-3" label="{{'Add' | translate}}" icon="pi pi-check" type="submit" />
+        </div>
+    </form>
+
+
+    <p-table [value]="accounts" class="col-xl-6 col-l-8 ms-5" [tableStyle]="{'min-width': '30rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="username" style="width:20%">
+                    {{"Username" | translate}} <p-sortIcon field="username" />
+                </th>
+                <th pSortableColumn="password" style="width:20%">
+                    {{"Password" | translate}} <p-sortIcon field="password" />
+                </th>
+                <th pSortableColumn="role" style="width:10%">
+                    {{"Role" | translate}} <p-sortIcon field="role" />
+                </th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-account>
+            <tr>
+                <td>{{ account.username }}</td>
+                <td>
+                    <input type="password" class="boder border-0 bg-transparent" value="{{ account.password }}"
+                        disabled />
+                </td>
+                <td>{{ account.role }}</td>
+                <td>
+                    <p-button pRipple icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true"
+                        severity="success" (click)="Edit(account)" />
+                    <p-button pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+                    severity="danger" (click)="Delete(account)" />
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p-confirmDialog [style]="{ width: '450px' }" />
+</div>

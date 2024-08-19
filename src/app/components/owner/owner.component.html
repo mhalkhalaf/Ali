@@ -1,0 +1,133 @@
+<div class="card">
+  <p-toast />
+  @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+  <p-toolbar styleClass="mb-4 gap-2">
+      <ng-template pTemplate="left">
+          <!--زر الإضافة-->
+        <p-button 
+              pRipple 
+              severity="success" 
+              label="{{'New' | translate}}" 
+              icon="pi pi-plus" 
+              class="mr-2"
+              (click)="openNew()" />
+      </ng-template>
+  </p-toolbar>
+}
+<!-- الجدول -->
+<!-- globalFilterFields: لتحديد الشيء الذي يمكننا البحث عليه -->
+  <p-table
+      #dt
+      [value]="owners"
+      [rows]="10"
+      [paginator]="true"
+      [globalFilterFields]="['name', 'id']"
+      [tableStyle]="{ 'min-width': '75rem' }"
+      [(selection)]="selectedOwners"
+      [rowHover]="true"
+      dataKey="id"
+      [showCurrentPageReport]="true"
+  >
+      <ng-template pTemplate="caption">
+          <div class="flex align-items-center justify-content-between">
+              <h5 class="m-0">{{"Manage" | translate}} {{"Owners" | translate}}</h5>
+              <span class="p-input-icon-left">
+                  <i class="pi pi-search"></i>
+                  <input 
+                      pInputText 
+                      type="text" 
+                      (input)="dt.filterGlobal($any($event.target).value,'contains')" 
+                      placeholder="{{'Search' | translate}}" />
+              </span>
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+          <tr>
+              <th pSortableColumn="id" style="min-width:15rem">
+                  {{"Id" | translate}} <p-sortIcon field="id" />
+              </th>
+              <th pSortableColumn="name" style="min-width:15rem">
+                  {{"Name" | translate}} <p-sortIcon field="name" />
+              </th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-owner>
+        <tr>
+              <td>
+                  {{ owner.id }}
+              </td>
+              <td>
+                {{owner.name}}
+              </td>
+              @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+              <td>
+                  <p-button 
+                      pRipple 
+                      icon="pi pi-pencil" 
+                      class="mr-2" 
+                      [rounded]="true" 
+                      [outlined]="true" 
+                      severity="success" 
+                      (click)="editOwner(owner)" />
+                  <p-button 
+                      pRipple 
+                      icon="pi pi-trash" 
+                      severity="danger" 
+                      [rounded]="true" 
+                      [outlined]="true" 
+                      (click)="deleteOwner(owner)" />
+              </td>
+            }
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div class="flex align-items-center justify-content-between">
+              {{"InTotal" | translate}} {{ owners ? owners.length : 0 }} {{"Owners" | translate}}.
+          </div>
+      </ng-template>
+  </p-table>
+  @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+  <p-dialog 
+      [(visible)]="ownerDialog" 
+      [style]="{ width: '450px' }" 
+      header="{{'OwnerDetails' | translate}}" 
+      [modal]="true" 
+      styleClass="p-fluid">
+          <ng-template pTemplate="content">
+              <div class="field">
+                  <label for="name">{{"Name" | translate}}</label>
+                  <input 
+                      type="text" 
+                      pInputText 
+                      id="name" 
+                      [(ngModel)]="owner.name" 
+                      #name = "ngModel"
+                      required 
+                      autofocus />
+                  @if(name.dirty && name?.errors?.["required"]){
+                    <small class="p-error">
+                      {{"Name" | translate}} {{"isRequired" | translate}}.
+                      </small>
+                  }
+              </div>
+          </ng-template>
+
+          <ng-template pTemplate="footer">
+              <p-button 
+                  pRipple 
+                  label="{{'Cancel' | translate}}" 
+                  icon="pi pi-times" 
+                  [text]="true" 
+                  (click)="hideDialog()" />
+              <p-button 
+                  pRipple 
+                  label="{{'Save' | translate}}" 
+                  icon="pi pi-check" 
+                  [text]="true" 
+                  (click)="saveOwner()" />
+          </ng-template>
+  </p-dialog>
+
+  <p-confirmDialog [style]="{ width: '450px' }" />
+}
+</div>

@@ -1,0 +1,157 @@
+<!-- <div class="card">
+  <div class="contener row justify-content-evenly">
+    <div class="col-4 col-xxl-3 align-items-betwen">
+      <h5 class="col-6 fw-bold">{{"Engineer" | translate}}</h5>
+      <p class="col-6">{{projectEngineer.engineer.name}}</p>
+    </div>
+    <div class="col-4 col-xxl-3 align-items-betwen">
+      <h5 class="col-6 fw-bold">{{"ProjectName" | translate}}</h5>
+      <p class="col-6"> {{projectEngineer.projectDetial.projectName}}</p>
+    </div>
+    <div class="col-4 col-xxl-3 align-items-betwen">
+        <h5 class="col-6 fw-bold">{{"Owner" | translate}}</h5>
+        <p class="col-6"> {{projectEngineer.projectDetial.owner?.name}}</p>
+      </div>
+    <div class="col-4 col-xxl-3 align-items-betwen">
+      <h5 class="col-6 fw-bold">{{"Slary" | translate}}</h5>
+      <p class="col-6"> {{projectEngineer.salary}}</p>
+    </div>
+    <div class="col-4 col-xxl-3 align-items-betwen">
+      <h5 class="col-6 fw-bold">{{"PhoneNumber" | translate }}</h5>
+      <p class="col-6"> {{projectEngineer.engineer.phoneNumber}}</p>
+    </div>
+    <div class="col-4 col-xxl-3 align-items-betwen">
+        <h5 class="col-6 fw-bold">{{"StartDate" | translate}}</h5>
+        <p class="col-6"> {{projectEngineer.projectDetial.startDate | date}}</p>
+    </div>
+    <div class="col-4 col-xxl-3 align-items-betwen">
+        <h5 class="col-6 fw-bold">{{"EndDate" | translate}}</h5>
+        <p class="col-6"> {{projectEngineer.projectDetial.endDate | date}}</p>
+    </div>
+  </div>
+  <div class="w-25">
+    <button class="btn btn-info" (click)="clickToRuternBack()">Projects</button>
+  </div> -->
+  
+  @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+    <p-toolbar styleClass="mb-4 gap-2">
+      <!-- <ng-template pTemplate="left"> -->
+        <!--زر الإضافة-->
+        <!-- <p-button pRipple severity="success" label="{{'New' | translate}}" icon="pi pi-plus" class="mr-2"
+          (click)="openNew()" />
+      </ng-template> -->
+    </p-toolbar>
+    }
+    <!-- الجدول -->
+    <!-- globalFilterFields: لتحديد الشيء الذي يمكننا البحث عليه -->
+    <p-table #dt [value]="projectsEngineers" [rows]="10" [paginator]="true"
+      [globalFilterFields]="['name']" [tableStyle]="{ 'min-width': '75rem' }"
+      [(selection)]="selectEngineers" [rowHover]="true" dataKey="id" [showCurrentPageReport]="true">
+      <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+          <h5 class="m-0">{{"Manage" | translate}} {{"Camps" | translate}}</h5>
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value,'contains')"
+              placeholder="{{'Search' | translate}}" />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="projectEngineer.engineer.name">
+            {{"Engineer" | translate}} <p-sortIcon field="projectEngineer.engineer.name" />
+          </th>
+          <th pSortableColumn="projectEngineer.projectDetial.projectName">
+            {{"ProjectName" | translate}} <p-sortIcon field="projectEngineer.projectDetial.projectName" />
+          </th>
+          <th pSortableColumn="projectEngineer.projectDetial.owner?.name" style="min-width:15rem">
+            {{"Owner" | translate}} <p-sortIcon field="projectEngineer.projectDetial.owner?.name" />
+          </th>
+
+          <th pSortableColumn="projectEngineer.salary" style="min-width:15rem">
+            {{"Salary" | translate}} <p-sortIcon field="projectEngineer.salary" />
+          </th>
+          <th pSortableColumn="projectEngineer.engineer.phoneNumber" style="min-width:15rem">
+            {{"PhoneNumber" | translate}} <p-sortIcon field="projectEngineer.engineer.phoneNumber" />
+          </th>
+          <th pSortableColumn="projectEngineer.projectDetial.startDate" style="min-width:15rem">
+            {{"StartDate" | translate}} <p-sortIcon field="projectEngineer.projectDetial.startDate" />
+          </th>
+          <th pSortableColumn="projectEngineer.projectDetial.endDate" style="min-width:15rem">
+            {{"EndDate" | translate}} <p-sortIcon field="projectEngineer.projectDetial.endDate" />
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-projectEngineer>
+        <tr>
+          <td>
+            {{projectEngineer.engineer.name}}
+          </td>
+          <td>
+            {{projectEngineer.projectDetial.projectName}}
+          </td>
+          <td>
+            {{projectEngineer.projectDetial.owner?.name}}
+          </td>
+          <td>
+            {{projectEngineer.salary}}
+          </td>
+          <td>
+            {{projectEngineer.engineer.phoneNumber}}
+          </td>
+          <td>
+            {{projectEngineer.projectDetial.startDate | date}}
+          </td>
+          <td>
+            {{projectEngineer.projectDetial.endDate | date}}
+          </td>
+          <!-- @if (authService.isRole("Administrator") || authService.isRole("Projects")) {
+          <td>
+            <p-button pRipple icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true" severity="success"
+              (click)="editCamp(camp)" />
+            <p-button pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+              (click)="deleteCamp(camp)" />
+          </td>
+          } -->
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+          {{"InTotal" | translate}} {{ engineers ? engineers.length : 0 }} {{"Camps" |translate}}.
+        </div>
+      </ng-template>
+    </p-table>
+    @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+    <!-- <p-dialog [(visible)]="campDialog" [style]="{ width: '450px' }" header="{{'CampDetails' | translate}}" [modal]="true"
+      styleClass="p-fluid">
+      <ng-template pTemplate="content">
+        <div class="card flex justify-content-center">
+          <p-dropdown [options]="Locations" [(ngModel)]="selectedCountry" #locaation = "ngModel" optionLabel="name" [editable]="true"
+            placeholder="{{'Selecta' | translate}} {{'Location' | translate}}" required />
+          @if (locaation?.errors?.["required"] && locaation.dirty) {
+          <small class="p-error">
+            {{"PlaseSelect" | translate}} {{"Location" | translate}}
+          </small>
+          }
+        </div>
+  
+        <div class="field">
+          <label for="name">{{"Name" | translate}}</label>
+          <input type="text" pInputText id="name" [(ngModel)]="projectEngineer.engineer.name" required #name = "ngModel" autofocus />
+          @if(name?.errors?.["required"] && name.dirty){
+          <small class="p-error">
+            {{"Name" | translate}} {{"isRequired" | translate}}.
+          </small>
+          }
+        </div>
+      </ng-template>
+  
+      <ng-template pTemplate="footer">
+        <p-button pRipple label="{{'Cancel' | translate}}" icon="pi pi-times" [text]="true" (click)="hideDialog()" />
+        <p-button pRipple label="{{'Save' | translate}}" icon="pi pi-check" [text]="true" (click)="saveCamp()" />
+      </ng-template>
+    </p-dialog> -->
+  
+    <!-- <p-confirmDialog [style]="{ width: '450px' }" /> -->
+    }

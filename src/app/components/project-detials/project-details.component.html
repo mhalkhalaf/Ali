@@ -1,0 +1,514 @@
+<div class="card">
+  <p-toast />
+  <div class="text-center mb-3">
+    @for (year of years; track year) {
+    <button class="ms-1 btn btn-info" (click)="GetYear(year)">{{year}}</button>
+    }
+  </div>
+  <div class="d-flex justify-content-around">
+    @for (type of types; track type) {
+    <button class="ms-1 px-5 btn btn-info" (click)="GetType(type.id)">{{type.name}}</button>
+    }
+  </div>
+  @if (authService.isRole("Administrator") || authService.isRole("Projects")) {
+  <p-toolbar styleClass="mb-4 gap-2">
+      <ng-template pTemplate="left">
+          <p-button 
+              pRipple 
+              severity="success" 
+              label="{{'New' | translate}}" 
+              icon="pi pi-plus" 
+              class="mr-2" 
+              (click)="openNew()" />
+      </ng-template>
+  </p-toolbar>
+  }
+  <p-table
+      #dt
+      [value]="projectDetials"
+      [rows]="10"
+      [paginator]="true"
+      [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+      [tableStyle]="{ 'min-width': '75rem' }"
+      [(selection)]="selectedProjectDetails"
+      [rowHover]="true"
+      dataKey="id"
+      currentPageReportTemplate="{last} of {totalRecords}"
+      [showCurrentPageReport]="true"
+  >
+      <ng-template pTemplate="caption" class="row">       
+          <div class="flex align-items-center justify-content-between">
+              <h5 class="m-0">{{"Manage" | translate}} {{"ProjectDetails" | translate}}</h5>
+              <span class="p-input-icon-left">
+                  <i class="pi pi-search"></i>
+                  <input 
+                      pInputText 
+                      type="text" 
+                      (input)="dt.filterGlobal($event.returnValue, 'contains')" 
+                      placeholder="{{'Search' | translate}}" />
+              </span>
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+          <tr>
+            <th pSortableColumn="ownerNumber" style="min-width:7rem">
+                {{"OwnerNumber" | translate}} <p-sortIcon field="ownerNumber" />
+            </th>
+            <th pSortableColumn="contractorNumber" style="min-width:7rem">
+                {{"ContractorNumber" | translate}} <p-sortIcon field="contractorNumber" />
+            </th>
+            <th pSortableColumn="projectName" style="min-width:10rem">
+                {{"ProjectName" | translate}} <p-sortIcon field="projectName" />
+            </th>
+            <th pSortableColumn="ownerName" style="min-width:10rem">
+                {{"OwnerName" | translate}} <p-sortIcon field="ownerName" />
+            </th>
+            <th pSortableColumn="directorate" style="min-width:10rem">
+                {{"Directorate" | translate}} <p-sortIcon field="directorate" />
+            </th>
+            <th pSortableColumn="location" style="min-width:10rem">
+                {{"Location" | translate}} <p-sortIcon field="location" />
+            </th>
+            <th pSortableColumn="camp" style="min-width:13rem">
+                {{"Camp" | translate}} <p-sortIcon field="camp" />
+            </th>
+            <th pSortableColumn="contractor" style="min-width:15rem">
+                {{"Contractor" | translate}} <p-sortIcon field="contractor" />
+            </th>
+            <th pSortableColumn="engineer" style="min-width:15rem">
+                {{"Engineer" | translate}} <p-sortIcon field="engineer" />
+            </th>
+            <!-- <th pSortableColumn="quantity" style="min-width:8rem">
+                {{"Quantity" |translate}} <p-sortIcon field="quantity" />
+            </th> -->
+            <th pSortableColumn="Value" style="min-width:15rem">
+                {{"Value" | translate}} <p-sortIcon field="Value" />
+            </th>
+            <th pSortableColumn="startDate" style="min-width:15rem">
+                {{"StartDate" | translate}} <p-sortIcon field="startDate" />
+            </th>
+            <th pSortableColumn="endDate" style="min-width:15rem">
+                {{"EndDate" | translate}} <p-sortIcon field="endDate" />
+            </th>
+            <th pSortableColumn="description" style="min-width:15rem">
+                {{"Description" | translate}}<p-sortIcon field="description" />
+            </th>
+          
+            <th pSortableColumn="isAcceptable" style="min-width:5rem">
+                {{"IsAcceptable" | translate}} <p-sortIcon field="isAcceptable" />
+            </th>
+            <!-- <th pSortableColumn="status" style="min-width:7rem">
+                {{"Status" | translate}} <p-sortIcon field="status" />
+            </th> -->
+            <th pSortableColumn="type" style="min-width:7rem">
+                {{"Type" | translate}} <p-sortIcon field="type" />
+            </th>
+            <th pSortableColumn="comments" style="min-width:15rem">
+            {{"Comments" | translate}} <p-sortIcon field="comments" />
+            </th>
+              <th></th>
+          </tr>
+      </ng-template>
+   
+      <ng-template pTemplate="body" let-projectDetial>
+        @for (pContractor of projectDetial.projectContractors; track pContractor) {
+          <tr>
+              <td>
+                  {{ projectDetial.ownerNumber }}
+              </td>
+              <td>
+                {{projectDetial.contractorNumber}}
+              </td>
+              <td>
+                  {{ projectDetial.projectName }}
+              </td>
+              <td>
+                  {{projectDetial.owner.name }}
+              </td>
+            @for (pCamp of projectDetial.projectCamps; track pCamp) {
+                    <td>
+                    {{pCamp.camp.location.directorate.name}}
+                    </td>
+                    <td>
+                    {{pCamp.camp.location.name}}
+                    </td>
+                    <td>
+                        <a class="nav-link text-info" [routerLink]="['camps',pCamp.camp.id]">
+                            {{pCamp.camp.name}}
+                        </a>
+                    </td>
+            }
+                    <td>
+                     {{pContractor.contractor.name}}
+                    </td>
+            @if(projectDetial.projectContractors == 0){
+                <td></td>
+            }
+            @for (pEngineer of projectDetial.projectEngineers; track pEngineer) {
+                <a class="nav-link text-info" [routerLink]="['engineers',pEngineer.projectId]">
+                    {{pEngineer.engineer.name}}
+                </a>
+                <!-- <td (click)="GetEngAndP(pEngineer.engineer.id,projectDetial.id)">{{pEngineer.engineer.name}}</td> -->
+            }
+            @if(projectDetial.projectEngineers == 0){
+                <td></td>
+            }
+                <!-- <td>
+                {{projectDetial.quantity}}
+                </td> -->
+                <td>
+                {{projectDetial.value | currency: 'USD'}}
+                </td>
+                <td>
+                {{projectDetial.startDate | date}}
+                </td>
+                <td>
+                {{projectDetial.endDate | date}}
+                </td>
+                <td>
+                {{projectDetial.description}}
+                </td>
+                <td>
+                    <p-tag 
+                        [value]="projectDetial.isAcceptable" 
+                        [severity]="getSeverity(projectDetial.isAcceptable)" />
+                </td> 
+                <!-- <td>
+                {{projectDetial.status}}
+                </td>    -->
+                    <td>
+                        {{projectDetial.typeP.name}}
+                    </td>
+                  
+                <td>
+                {{projectDetial.comments}}
+                </td>   
+
+                @if (authService.isRole("Administrator") || authService.isRole("Projects") || authService.isRole("Contractor")) {
+              <td>
+                  <p-button 
+                      pRipple 
+                      icon="pi pi-pencil" 
+                      class="mr-2" 
+                      [rounded]="true" 
+                      [outlined]="true" 
+                      severity="success" 
+                      (click)="editProjectDetail(projectDetial)" />
+                      @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+                      <p-button 
+                      pRipple 
+                      icon="pi pi-trash" 
+                      severity="danger" 
+                      [rounded]="true" 
+                      [outlined]="true" 
+                      (click)="deleteProjectDetail(projectDetial)" />
+                      }
+              </td>
+            }
+          </tr>
+        }
+        @if (projectDetial.projectContractors == 0) {
+        <tr>
+            <td>
+                {{ projectDetial.ownerNumber }}
+            </td>
+            <td>
+              {{projectDetial.contractorNumber}}
+            </td>
+            <td>
+                {{ projectDetial.projectName }}
+            </td>
+            <td>
+                {{projectDetial.owner.name }}
+            </td>
+          @for (pCamp of projectDetial.projectCamps; track pCamp) {
+                  <td>
+                  {{pCamp.camp.location.directorate.name}}
+                  </td>
+                  <td>
+                  {{pCamp.camp.location.name}}
+                  </td>
+                  <td>
+                      <a class="nav-link text-info" [routerLink]="['camps',pCamp.camp.id]">
+                          {{pCamp.camp.name}}
+                      </a>
+                  </td>
+          }
+          @if(projectDetial.projectContractors == 0){
+              <td></td>
+          }
+          @for (pEngineer of projectDetial.projectEngineers; track pEngineer) {
+            <td>{{pEngineer.engineer.name}}</td>
+        }
+        @if(projectDetial.projectEngineers == 0){
+            <td></td>
+        }
+              <!-- <td>
+              {{projectDetial.quantity}}
+              </td> -->
+              <td>
+              {{projectDetial.value | currency: 'USD'}}
+              </td>
+              <td>
+              {{projectDetial.startDate | date}}
+              </td>
+              <td>
+              {{projectDetial.endDate | date}}
+              </td>
+              <td>
+              {{projectDetial.description}}
+              </td>
+              <td>
+                  <p-tag 
+                      [value]="projectDetial.isAcceptable" 
+                      [severity]="getSeverity(projectDetial.isAcceptable)" />
+              </td> 
+              <!-- <td>
+              {{projectDetial.status}}
+              </td>    -->
+                  <td>
+                      {{projectDetial.typeP.name}}
+                  </td>
+                
+              <td>
+              {{projectDetial.comments}}
+              </td>   
+
+              @if (authService.isRole("Administrator") || authService.isRole("Projects") || authService.isRole("Contractor")) {
+            <td>
+                <p-button 
+                    pRipple 
+                    icon="pi pi-pencil" 
+                    class="mr-2" 
+                    [rounded]="true" 
+                    [outlined]="true" 
+                    severity="success" 
+                    (click)="editProjectDetail(projectDetial)" />
+                    @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+                    <p-button 
+                    pRipple 
+                    icon="pi pi-trash" 
+                    severity="danger" 
+                    [rounded]="true" 
+                    [outlined]="true" 
+                    (click)="deleteProjectDetail(projectDetial)" />
+                    }
+            </td>
+          }
+        </tr>
+    }
+      </ng-template>
+      <ng-template pTemplate="summary">
+          <div class="flex align-items-center justify-content-between">
+              {{"InTotal" | translate}} {{ projectDetials ? projectDetials.length : 0 }} {{"Project" | translate}}.
+          </div>
+      </ng-template>
+  </p-table>
+  
+  <p-dialog [(visible)]="projectDetialDialog" [style]="{ width: '450px' }" header="{{'ProjectDetails' | translate}}" [modal]="true"
+  styleClass="p-fluid">
+  @if (authService.isRole("Administrator") || authService.isRole("Projects")) {
+  <ng-template pTemplate="content">
+    <div class="field">
+        <label for="ownerNumber">{{"OwnerNumber" | translate}}</label>
+        <input type="number" pInputText id="ownerNumber" name="ownerNumber" [(ngModel)]="projectDetial.ownerNumber" #ownerNumber = "ngModel" required/>
+        @if (ownerNumber.dirty && ownerNumber?.errors?.["required"]) {
+            <small class="p-error">
+                {{"OwnerNumber" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+
+    <div class="field">
+        <label for=" contractorNumber">{{"ContractorNumber" | translate}}</label>
+        <input type="number" pInputText id="contractorNumber" name="contractor" [(ngModel)]="projectDetial.contractorNumber" #contractorNumber = "ngModel" required />
+        @if (contractorNumber.dirty && contractorNumber?.errors?.["required"]) {
+            <small class="p-error">
+                {{"ContractorNumber" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+
+    <div class="field">
+        <label for="projectName">{{"ProjectName" | translate}}</label>
+        <input type="text" pInputText id="projectName" name="projectName" [(ngModel)]="projectDetial.projectName" #projetName = "ngModel" required />
+        @if (projetName.dirty && projetName?.errors?.["required"]) {
+            <small class="p-error">
+                {{"ProjectName" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+    <div>
+        <label>{{"Owner" | translate}}</label>
+        <p-dropdown class="mb-5" [options]="owners" [editable]="true" [(ngModel)]="ownerId" #owner = "ngModel" optionValue="id" optionLabel="name" placeholder="{{'Selecta' | translate}} {{'Owner' | translate}}" required />
+        @if (owner.dirty && owner?.errors?.["required"]) {
+            <small class="p-error">
+              {{"PlaseSelect" | translate}} {{"Owner" | translate}}
+            </small>
+            }
+    </div>
+   
+    <div>
+        <label for="projectName">{{"Camp" | translate}}</label>
+        <p-dropdown class="mb-5" [options]="camps" [editable]="true" [(ngModel)]="campId" #camp = "ngModel" optionValue="id" optionLabel="name" placeholder="{{'Selecta' | translate}} {{'Camps'|translate}}" required />
+        @if (camp.dirty && camp?.errors?.["required"]) {
+            <small class="p-error">
+            {{"PlaseSelect" | translate}} {{"Camp" | translate}}
+            </small>
+            }
+    </div>
+  
+
+
+    <div class="field">
+        <label for="value">{{"Value" | translate}}</label>
+        <input type="number" pInputText id="value" name="value" [(ngModel)]="projectDetial.value" #value="ngModel" required />
+        @if (value.dirty && value?.errors?.["required"]) {
+            <small class="p-error">
+                {{"Value" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+    <div class="field">
+        <label for="startDate">{{"StartDate" | translate}}</label>
+        <input type="date" pInputText id="startDate" name="startDate" [(ngModel)]="projectDetial.startDate" #startDate = "ngModel" required />
+        @if (startDate.dirty && startDate?.errors?.["required"]) {
+            <small class="p-error">
+                {{"StartDate" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+    <div class="field">
+        <label for="endDate">{{"EndDate" | translate}}</label>
+        <input type="date" pInputText id="endDate" name="endDate" [(ngModel)]="projectDetial.endDate" #endDate = "ngModel" required />
+        @if (endDate.dirty && endDate?.errors?.["required"]) {
+            <small class="p-error">
+                {{"EndDate" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+
+
+    <div class="field">
+        <label for="description">{{"Description" | translate}}</label>
+        <input type="text" pInputText id="description" name="description" [(ngModel)]="projectDetial.description" #description = "ngModel" required />
+        @if (description.dirty && description?.errors?.["required"]){
+            <small class="p-error">
+                {{"Description" | translate}} {{"isRequired" | translate}}
+            </small>
+            }
+    </div>
+
+    <div class="field">
+        <label for="isAcceptable">{{"IsAcceptable" | translate}}</label>
+        <div>
+            <span class="ms-5">
+                <label for="isAcceptable">{{"IsAcceptable" | translate}}</label>
+                <input class="ms-2" type="checkbox" id="isAcceptable" name="True" value="True" [(ngModel)]="projectDetial.isAcceptable"/>
+            </span>
+        </div>
+    </div>
+
+    <div>
+        <label for="projectName">{{"Type" | translate}}</label>
+        <p-dropdown [options]="types" [(ngModel)]="typeId" [editable]="true" #type = "ngModel" optionValue="id" optionLabel="name" placeholder="{{'Selecta'| translate}} {{'Type' | translate}}" required />
+        @if (type.dirty && type?.errors?.["required"]) {
+            <small class="p-error">
+            {{"PlaseSelect" | translate}} {{"Type" | translate}}
+            </small>
+            }
+    </div>
+    
+
+    <div class="field">
+        <label for="comments">{{"Comments" | translate}}</label>
+        <input type="text" pInputText id="comments" name="comments" [(ngModel)]="projectDetial.comments"/>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button 
+        pRipple 
+        label="{{'Cancel' | translate}}" 
+        icon="pi pi-times" 
+        [text]="true" 
+        (click)="hideDialog()" />
+    <p-button 
+        pRipple 
+        label="{{'Save' | translate}}" 
+        icon="pi pi-check" 
+        [text]="true" 
+        (click)="saveProjectDetail()" />
+</ng-template>
+  }
+  @if (authService.isRole("Contractor")) {
+<ng-template pTemplate="content">
+    <p-dropdown [options]="contractors" [editable]="true" [(ngModel)]="contractorId" #contractor = "ngModel" optionValue="id" optionLabel="name" placeholder="{{'Selecta' | translate}} {{'Contractor' | translate}}"
+    required />
+    @if (contractor.dirty && contractor?.errors?.["required"]) {
+        <small class="p-error">
+        {{"PlaseSelect" | translate}} {{"Type" | translate}}
+        </small>
+        }
+</ng-template>
+<ng-template pTemplate="footer">
+    <p-button 
+        pRipple 
+        label="{{'Cancel' | translate}}" 
+        icon="pi pi-times" 
+        [text]="true" 
+        (click)="hideDialog()" />
+    <p-button 
+        pRipple 
+        label="{{'Save' | translate}}" 
+        icon="pi pi-check" 
+        [text]="true" 
+        (click)="updateProject()" />
+</ng-template>
+  }
+
+
+</p-dialog>
+<p-confirmDialog [style]="{ width: '450px' }" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

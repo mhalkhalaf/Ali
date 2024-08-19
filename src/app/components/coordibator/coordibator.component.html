@@ -1,0 +1,109 @@
+<div class="card">
+    <p-toast />
+    @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+    <p-toolbar styleClass="mb-4 gap-2">
+        <ng-template pTemplate="left">
+            <!--زر الإضافة-->
+            <p-button pRipple severity="success" label="{{'New' | translate}}" icon="pi pi-plus" class="mr-2" (click)="openNew()" />
+        </ng-template>
+    </p-toolbar>
+}
+    <!-- الجدول -->
+    <!-- globalFilterFields: لتحديد الشيء الذي يمكننا البحث عليه -->
+    <p-table #dt [value]="coordibators" [rows]="10" [paginator]="true"
+        [globalFilterFields]="['name', 'owner.name','phoneNumber']" [tableStyle]="{ 'min-width': '75rem' }"
+        [(selection)]="selectedCoordibators" [rowHover]="true" dataKey="id" [showCurrentPageReport]="true">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                <h5 class="m-0">{{"Manage" | translate}} {{"Coordibators" | translate}}</h5>
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value,'contains')"
+                        placeholder="{{'Search' | translate}}" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="owner.name">
+                    {{"OwnerName" | translate}} <p-sortIcon field="owner.name" />
+                </th>
+                <th pSortableColumn="name" style="min-width:15rem">
+                    {{"Name" |translate}} <p-sortIcon field="name" />
+                </th>
+                <th pSortableColumn="phoneNumber">
+                    {{"PhoneNumber" | translate}} <p-sortIcon field="phoneNumber" />
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-coordibator>
+            <tr>
+                <td>
+                    {{coordibator.owner.name}}
+                </td>
+                <td>
+                    {{coordibator.name}}
+                </td>
+                <td>
+                    {{coordibator.phoneNumber}}
+                </td>
+                @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+                <td>
+                    <p-button pRipple icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true"
+                        severity="success" (click)="editCoordibator(coordibator)" />
+                    <p-button pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+                        (click)="deleteCoordibator(coordibator)" />
+                </td>
+            }
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+                {{"InTotal" | translate}} {{ coordibators ? coordibators.length : 0 }} {{"Coordibators" | translate}}.
+            </div>
+        </ng-template>
+    </p-table>
+    @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+    <p-dialog [(visible)]="coordibatorDialog" [style]="{ width: '450px' }" header="{{'CoordibatorDetails' | translate}}" [modal]="true"
+        styleClass="p-fluid">
+        <ng-template pTemplate="content">
+            <p-dropdown [options]="owners"  [(ngModel)]="owner" #ownername="ngModel" optionLabel="name" [editable]="true" placeholder="{{'Selecta' | translate}} {{'Owner' | translate}}"
+                required/>
+                @if (ownername.dirty && ownername?.errors?.["required"]) {
+                        <small class="p-error">
+                          {{"PlaseSelect" | translate}} {{"Owner" | translate}}
+                        </small>
+                        }
+
+            <div class="field">
+                <label for="coordibatorName">{{"Name" | translate}}</label>
+                <input type="text" pInputText id="coordibatorName" name="name" [(ngModel)]="coordibator.name" #name = "ngModel"
+                    required />
+                @if (name?.errors?.["required"] && name.dirty) {
+                <small class="p-error">
+                    {{"Name" | translate}} {{"isRequired" | translate}}
+                </small>
+                }
+            </div>
+
+            <div class="field">
+                <label for="phoneNumber">{{"PhoneNumber" | translate}}</label>
+                <input type="text" pInputText id="phoneNumber" name="phoneNumber" [(ngModel)]="coordibator.phoneNumber" #phoneNumber = "ngModel"
+                    required />
+                @if(phoneNumber?.errors?.["required"] && phoneNumber.dirty){
+                <small class="p-error">
+                    {{"PhoneNumber" | translate}} {{"isRequired" | translate}}.
+                </small>
+                }
+            </div>
+        </ng-template>
+
+        <ng-template pTemplate="footer">
+            <p-button pRipple label="{{'Cancel' | translate}}" icon="pi pi-times" [text]="true" (click)="hideDialog()" />
+            <p-button pRipple label="{{'Save' | translate}}" icon="pi pi-check" [text]="true" (click)="saveCoordibator()" />
+        </ng-template>
+    </p-dialog>
+
+    <p-confirmDialog [style]="{ width: '450px' }" />
+    }
+</div>

@@ -1,0 +1,667 @@
+[
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "ادلب",
+     "id": "9770d9ea-2555-46fc-abc8-9436aa5b3f60"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "عدوان",
+     "id": "58aee76d-f01a-456c-b293-65a2157d8e17"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "مزارع ادلب",
+     "id": "4c288ee0-3b07-4bda-96a9-6babe7cbc096"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "عرب سعيد",
+     "id": "5d841d85-1703-463c-af90-71a441e7e405"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "العرشاني",
+     "id": "aef37ff4-bca3-4501-9f9c-d87662a19386"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "مرتين",
+     "id": "5fd6ffff-db53-4fcb-abf5-54fdc49ad850"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "تب عبس",
+     "id": "d02dfb1a-2255-4a11-88bf-da0656983145"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "حارم",
+     "id": "448e21c7-039a-4ee2-aed0-7d5aefdb926a"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "البلاط",
+     "id": "0729e250-adb3-42d2-b305-f103d7bc3610"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "كفر عروق",
+     "id": "853818b7-b4ab-463e-84c0-bf096b170379"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "قورقانيا",
+     "id": "3eace9dd-7332-4664-8c14-35695d5ec9e6"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "كفرهند",
+     "id": "7134e62e-eca5-47ff-a428-717df857a19a"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "باريشا",
+     "id": "ad85f1a8-02fb-47b3-b953-3b44c3d1e219"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "سلقين",
+     "id": "57f5e919-3104-4c58-a2ca-66a3b5b58d39"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "الحمزية",
+     "id": "fb0eaafc-60f8-465b-a133-90dddef77cc1"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "طورلاها",
+     "id": "df8f0fe7-e599-42e6-b14a-18329772dcf8"
+    },
+    {
+     "DirectorateId": "d959f13f-d066-407a-8c80-b0e944b359f7",
+     "name": "التلول",
+     "id": "6c10192b-87ca-4851-b9f4-fb077be65c88"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "حير جاموس",
+     "id": "3ac393f9-aa75-46fc-81fe-1beda567c546"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "البيرة",
+     "id": "3dd4a9ba-25ad-4102-af3d-fcebc48315d0"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الدويلة",
+     "id": "0ab31b50-fbbe-4105-8d13-303d33899b52"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الفاروقية",
+     "id": "b8f57194-21c7-48f6-8d04-f00af71d79d2"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بوزغار",
+     "id": "c3fb4a5e-ba54-4645-a66b-2e75783579aa"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ديرسيتا",
+     "id": "a9deede7-e721-4e9e-8a8b-ba6118a71bdd"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "جدعين",
+     "id": "218bc2e9-0621-4f89-bf67-7c88e65f568c"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "حتان",
+     "id": "79187ad2-1024-47ca-b382-c3048c2a1073"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بسنيا",
+     "id": "f538b201-be63-4749-9007-271668a9d96b"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفرحوم",
+     "id": "7c05898d-59e1-4c1c-acfb-5fea8cfc2c75"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "دلبيا",
+     "id": "bebbf76a-92ef-4a3e-89a6-a4ee6697dd9d"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كوكوناية",
+     "id": "2a3f0373-f55c-463c-a592-20a8d1ceec89"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كوارو",
+     "id": "acbb8ab0-7602-463d-a755-f754a02e97d8"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كبتة",
+     "id": "cdd06cc2-4561-4d5c-aea7-3ee5e9e0cb75"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ابو طلحة",
+     "id": "084bca44-1339-4f0c-93b0-5cde8eeaea92"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عزمارين",
+     "id": "df5260b1-7449-4b0b-ae77-8f136a3c2974"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "اسقاط",
+     "id": "b91a6b01-2998-49a4-ab1f-4cd264b94ab7"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بسليا",
+     "id": "683b2036-fe43-41cb-b196-4a3d1d579811"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عين البكارة",
+     "id": "f72bbb50-6985-4d71-9013-cec8a639e85a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "جبل بنابل",
+     "id": "59cb991d-7f2b-4d69-b992-9d3541418bbf"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "تل عمار",
+     "id": "c96540bd-0282-451d-8863-3f07fbc0f551"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ارمناز",
+     "id": "d214e67e-6f89-49b5-81cd-1d464e550220"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عريبا",
+     "id": "1f37936e-c621-4ffc-acee-88fef5726ea6"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بتيا",
+     "id": "10d55078-55df-418e-baf7-5e535aa8f2dd"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفرتخاريم",
+     "id": "21469669-c211-409b-9e52-c186d64d1ae4"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عين البيضة",
+     "id": "e965a101-be3c-48a3-aad9-05e9b519c461"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "رضوة",
+     "id": "12023f6e-b64e-4a5d-a09d-3fc566885267"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "السعيدية",
+     "id": "468fdd22-02c8-48f5-aa0c-57a7f1b8164a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الحمامة",
+     "id": "3e886bbf-e4f7-48ed-8c5e-2854d85b26a6"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الملند",
+     "id": "970bba65-e6a1-4940-8961-8f54938dfbf2"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "زرزور",
+     "id": "86e2442a-2ab2-4ef4-8a2a-c70163b8c4d4"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "خربة الجوز ",
+     "id": "3aa599ce-c2a4-4a25-b45e-0eed196ee957"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "دركوش",
+     "id": "4bdee5e1-259c-4a08-ae3b-0559dd54f235"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "مريمين",
+     "id": "e2c03ede-5e07-410c-a7bb-b343f77eb18d"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "البالعة",
+     "id": "2592eeb6-6976-4792-b8d6-10fadfcb0c83"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الزوف",
+     "id": "6c06ebce-f8e8-4cd0-ab76-c0f393e873ff"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عين البيضا",
+     "id": "ae518155-f8b1-4da2-8191-32b78b4dffea"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الضهر",
+     "id": "29eeebf7-671d-42d8-bcc2-29a326ab769e"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الحنبوشية",
+     "id": "0610e5ee-cfae-4b0c-a5e5-ff3d853b87ca"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الغفر",
+     "id": "922cb558-7eb4-417f-b713-5c9193de7b6c"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بكسريا",
+     "id": "9cfa5b41-7b33-4eba-8135-ffca02e786bd"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الدرية",
+     "id": "fd7b757c-8556-4363-8169-9742f3f69046"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "القادرية",
+     "id": "01178772-6313-4c5b-96ab-15fdaa36d446"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "البشيرية",
+     "id": "429cf729-491c-4ec2-a83f-25d5605e5e6a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "البردقلي",
+     "id": "4ec657ba-8b2a-434e-8e45-2fd2f941d442"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "تل الكرامة",
+     "id": "62ce8ea7-7c01-4d12-a7db-9995923f5a6a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "التوامة",
+     "id": "6f36ee6e-91cd-48e8-9af5-beba2cb05b51"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ديرحسان",
+     "id": "ab9a3e81-7161-433c-8bd2-a371e2668ffd"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفركرمين",
+     "id": "d917ddec-5eba-4262-8b55-59e4eecc53c4"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ترمانين",
+     "id": "788bd08d-0983-40e9-ac79-9bb32adc90d0"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الدانا",
+     "id": "d0787577-6997-4c78-97ec-92bc978f4dee"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "زرزيتا",
+     "id": "36cca746-70d8-4b4b-a89d-e3a3669fa52b"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "حزرة",
+     "id": "91c24d07-82f8-4d69-81d3-58a65c0b76c2"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "تلعادة",
+     "id": "53e13574-3676-408a-a01b-527e4020ded9"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ديرسمعان",
+     "id": "983316bc-68e7-4938-a97e-21dd0daab4e3"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفرناصح",
+     "id": "1aa4c832-93a8-41e7-b861-1303fbf45685"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "فدرة",
+     "id": "4b444035-65d3-4937-a924-5b3a24c82f3a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "باتبو",
+     "id": "eeca2087-c417-441a-8486-1c547109904b"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "القاطورة",
+     "id": "cdbcc691-f32e-4a5c-9ee4-fe4b811875e3"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "دارة عزة",
+     "id": "914be5d8-0f4b-45c4-935b-e6f3f9e20eaa"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بازهير",
+     "id": "dcb25701-f7cc-4a1a-8d46-9942acaf3e56"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ارحاب",
+     "id": "a0f59adf-4531-4b0c-b267-6f61d0474e91"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ابين",
+     "id": "dd235cb7-c3ba-4dc6-9be0-b5665d96f5f5"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "باتنته",
+     "id": "f0081ce4-ccba-40cb-837a-d03a0b7a0d7a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفتين",
+     "id": "7181e76b-2829-4bd3-807f-8e06fadbdaec"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "حربنوش",
+     "id": "404cc6d2-0afe-4d8b-b73b-8ae28f4128db"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الشيخ بحر",
+     "id": "b323fc26-c3d2-4962-a327-c34c1e017570"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "طعوم",
+     "id": "fb715bef-17f7-4573-b531-fdcf35ba3017"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "معر تمصرين",
+     "id": "2883e134-dbcd-4ccd-9047-64ce7bcf2256"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفر نبي",
+     "id": "a4c30838-5ba1-4be0-ad28-454afdee7d2f"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "زردنا_مشهد",
+     "id": "a6ef202f-793d-4112-9f6d-7e458a89704d"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفر تنور",
+     "id": "a0e324ab-c94f-4884-b80c-d27de8bd0e4c"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفروحين",
+     "id": "71a9d982-e968-49aa-bd1e-3e378d5c9b69"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "معارة الاخوان",
+     "id": "8d764010-998a-4a3a-b988-6eb3fa201cbf"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الكفر_كفريحمول",
+     "id": "e801438a-bcee-44e1-893d-a4b017420287"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "رام حمدان",
+     "id": "2a50594f-fa74-40d8-9023-143a92e6dc02"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بيرة كفتين",
+     "id": "57d198e2-044b-44a6-aeb7-5fbff69202ba"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفر جالس",
+     "id": "14c17508-6c27-4e85-92e3-9c8e43e6504a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "القنيطرة - أرمناز",
+     "id": "05cedc60-b03b-42c5-9a58-3f5873d2eaf4"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بحورى",
+     "id": "2e731370-3f3e-4dca-b402-68d717c53709"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الهباط",
+     "id": "ef156df4-bde4-40d4-b7e7-641720fe8e88"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الفوعة",
+     "id": "77ffb011-49de-46d9-bf4c-867e83e496f4"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بشمارون",
+     "id": "d66193e6-5d79-4bfb-ad34-5cc59d434255"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفرتنور",
+     "id": "b0d56fef-5ecb-4fe9-b6f1-205d934b4d31"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "الشيخ يوسف",
+     "id": "c884a035-f60a-473a-b4da-19c09f54394d"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "مورين ",
+     "id": "ad01c376-0c51-47f8-a4e0-605a7fc60763"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "اريحا",
+     "id": "4d79288f-6757-43b2-9311-563282fe153c"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "معترم",
+     "id": "fc3a4f8f-3fe0-4545-9e22-e9d998ec8a8a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "محمبل",
+     "id": "10021677-3cb0-4ef6-986b-f0d4b96d4754"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عدوان",
+     "id": "49ff6c19-b07d-4459-a5dc-e5b30058a67f"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفرلوسين",
+     "id": "100e0da9-c5c0-4221-8d28-7733144c65f0"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "ديرحسان",
+     "id": "afd5bad4-e08e-4312-ad1e-ff3ef9ddf77f"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "مشهد روحين",
+     "id": "4bf70064-34e2-4073-9df4-41f31ea08f24"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "صلوة",
+     "id": "ff61444d-3658-4e4e-819b-95f56bb86cc5"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "البردقلي",
+     "id": "1ee9eebe-7f81-4485-8d4a-ed6a7cf10649"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "قاح",
+     "id": "b1ca336b-b04f-4744-8398-320e41fde237"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "عقربات",
+     "id": "ddc4f3dc-2572-49af-8104-735daabafcb1"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "أطمة",
+     "id": "21d33170-b7f6-486d-a942-ad317c1bda1a"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كلبيت",
+     "id": "8d1a7228-e5e5-4683-9b95-2c9cb0663707"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "سرجبلة",
+     "id": "9ac8452d-0407-4633-b71f-835ba29efbf8"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "زرزيتا",
+     "id": "10d653b4-938b-42e7-8ac0-dbe6a80d7bdf"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "جنديرس",
+     "id": "6a70cdac-191c-4a7b-87bd-81c796bc0638"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفرصفرة",
+     "id": "15b025ae-971c-4116-b4cc-8b8c105bce19"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "تل سلور",
+     "id": "08a8557f-2aa7-483a-aa2a-50575bf341d9"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "المحمدية",
+     "id": "f37e0bf3-f569-46e5-86fa-760275103e2d"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "اغجله",
+     "id": "805cab98-9975-4767-8e5d-21201fe00fbd"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "وادي عباس",
+     "id": "8de39fcb-4326-4f8f-ae09-ecadd850008c"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "سرمدا",
+     "id": "be82c574-6218-4d41-8fa8-25e915545a48"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "بابسقا",
+     "id": "07ecf426-b039-4f30-858d-6a3f862da2f4"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "البردقلي",
+     "id": "e0c277c2-a32f-4b26-a058-46cbca5ea8af"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كللي",
+     "id": "0e91e0cd-3810-4589-a21e-1be16796869f"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفردريان",
+     "id": "6c2886b6-2e40-4e19-93ac-d3f62e8b3c81"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كمونه",
+     "id": "398679a1-3f24-4190-9f11-66f430ad81af"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "باتبو",
+     "id": "6e3c7e54-21ef-4c61-afa3-de217dc8cca2"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "حزانو",
+     "id": "6a73715e-2f29-4d60-9049-b6ae1a68de66"
+    },
+    {
+     "DirectorateId": "c23929bb-c196-461b-a40b-d8eb9edeb47e",
+     "name": "كفريحمول",
+     "id": "a9f354a9-9e86-4959-a6e8-1b37f495bbbc"
+    }
+   ]

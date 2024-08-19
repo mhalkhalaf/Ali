@@ -1,0 +1,119 @@
+<div class="card">
+  <!-- @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+  <p-toolbar styleClass="mb-4 gap-2">
+    <ng-template pTemplate="left"> -->
+      <!--زر الإضافة-->
+      <!-- <p-button pRipple severity="success" label="{{'New' | translate}}" icon="pi pi-plus" class="mr-2"
+        (click)="openNew()" />
+    </ng-template>
+  </p-toolbar>
+  } -->
+  <!-- الجدول -->
+  <!-- globalFilterFields: لتحديد الشيء الذي يمكننا البحث عليه -->
+  <!-- <p-table #dt [value]="camps" [rows]="10" [paginator]="true"
+    [globalFilterFields]="['name', 'location.name','location.directorate.name']" [tableStyle]="{ 'min-width': '75rem' }"
+    [(selection)]="selectedCamps" [rowHover]="true" dataKey="id" [showCurrentPageReport]="true">
+    <ng-template pTemplate="caption">
+      <div class="flex align-items-center justify-content-between">
+        <h5 class="m-0">{{"Manage" | translate}} {{"Camps" | translate}}</h5>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value,'contains')"
+            placeholder="{{'Search' | translate}}" />
+        </span>
+      </div>
+    </ng-template> -->
+    <!-- <ng-template pTemplate="header"> -->
+      <!-- <tr>
+        <th pSortableColumn="location.directorate.name">
+          {{"Directorate" | translate}} <p-sortIcon field="location.directorate.name" />
+        </th>
+        <th pSortableColumn="location.name">
+          {{"LocationName" | translate}} <p-sortIcon field="location.name" />
+        </th>
+        <th pSortableColumn="name" style="min-width:15rem">
+          {{"Name" | translate}} <p-sortIcon field="name" />
+        </th>
+      </tr> -->
+    <!-- </ng-template> -->
+    <!-- <ng-template pTemplate="body" let-camp> -->
+<div class="contener row justify-content-evenly">
+  <div class="col-4 col-xxl-2">
+    <h5 class="col-6 fw-bold">{{"Directorate" | translate}}</h5>
+    <p class="col-6">{{camp.location?.directorate?.name}}</p>
+  </div>
+  <div class="col-4 col-xxl-2">
+    <h5 class="col-6 fw-bold">{{"Location" | translate}}</h5>
+    <p class="col-6"> {{camp.location?.name}}</p>
+  </div>
+  <div class="col-4 col-xxl-2">
+    <h5 class="col-6 fw-bold">{{"Camp" | translate}}</h5>
+    <p class="col-6"> {{camp.name}}</p>
+  </div>
+  <div class="col-4 col-xxl-2">
+    <h5 class="col-6 fw-bold">{{"NumberFamilies" | translate}}</h5>
+    <p class="col-6"> {{camp.numberFamilies}}</p>
+  </div>
+</div>
+<button (click)="showMap(camp)" class="btn btn-danger">
+  {{show ? "اخفاء" : "عرض"}} الخريطة
+</button>
+<div class="w-25">
+  <button class="btn btn-info" (click)="clickToRuternBack()">Projects</button>
+</div>
+
+  <a target="_blank" href='https://www.google.com/maps/place/{{camp.latityde}},{{camp.longityde}}'>
+    <div id="map" style="height: 500px;"></div>
+  </a>
+
+  
+    <!-- </ng-template> -->
+        <!-- @if (authService.isRole("Administrator") || authService.isRole("Projects")) {
+        <td>
+          <p-button pRipple icon="pi pi-pencil" class="mr-2" [rounded]="true" [outlined]="true" severity="success"
+            (click)="editCamp(camp)" />
+          <p-button pRipple icon="pi pi-trash" severity="danger" [rounded]="true" [outlined]="true"
+            (click)="deleteCamp(camp)" />
+        </td>
+        } -->
+      <!-- </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        {{"InTotal" | translate}} {{ camps ? camps.length : 0 }} {{"Camps" |translate}}.
+      </div>
+    </ng-template>
+  </p-table> -->
+  <!-- @if (authService.isRole("Administrator" || authService.isRole("Projects"))) {
+    styleClass="p-fluid">
+    <ng-template pTemplate="content">
+      <div class="card flex justify-content-center">
+        <p-dropdown [options]="Locations" [(ngModel)]="selectedCountry" #locaation = "ngModel" optionLabel="name" [editable]="true"
+          placeholder="{{'Selecta' | translate}} {{'Location' | translate}}" required />
+        @if (locaation?.errors?.["required"] && locaation.dirty) {
+        <small class="p-error">
+          {{"PlaseSelect" | translate}} {{"Location" | translate}}
+        </small>
+        }
+      </div>
+
+      <div class="field">
+        <label for="name">{{"Name" | translate}}</label>
+        <input type="text" pInputText id="name" [(ngModel)]="camp.name" required #name = "ngModel" autofocus />
+        @if(name?.errors?.["required"] && name.dirty){
+        <small class="p-error">
+          {{"Name" | translate}} {{"isRequired" | translate}}.
+        </small>
+        }
+      </div>
+    </ng-template> -->
+
+    <!-- <ng-template pTemplate="footer">
+      <p-button pRipple label="{{'Cancel' | translate}}" icon="pi pi-times" [text]="true" (click)="hideDialog()" />
+      <p-button pRipple label="{{'Save' | translate}}" icon="pi pi-check" [text]="true" (click)="saveCamp()" />
+    </ng-template> -->
+  <!-- </p-dialog>
+
+  <p-confirmDialog [style]="{ width: '450px' }" />
+  } -->
+<!-- </div> -->
