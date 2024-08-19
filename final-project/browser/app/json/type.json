@@ -1,0 +1,22 @@
+[
+    {
+        "id": "2e1b25c9-b7af-4624-a4de-219fad013b48",
+        "name": "Caravan"
+    },
+    {
+        "id": "94b7838e-c037-496d-a364-2e896ef68598",
+        "name": "Service"
+    },
+    {
+        "id": "20dd89d7-1653-4986-9345-d7c7b698db42",
+        "name": "Shelter"
+    },
+    {
+        "id": "11917afc-63e3-4f02-81f6-f867ca68f201",
+        "name": "General"
+    },
+    {
+        "id": "ad266e41-d0dc-4e20-94c6-f92d74b4158e",
+        "name": "Evaluation"
+    }
+]
